@@ -27,6 +27,7 @@ export const restaurant_samples = [
       name: "Sara Espinosa Garcia",
       img: "https://randomuser.me/api/portraits/women/1.jpg",
       review: "Now this is what I call a burger place! Amazing food carefully prepared with the best quality ingredients around.",
+      stars: 5,
       date: "June 20th, 2016"
     },
     {
@@ -34,7 +35,9 @@ export const restaurant_samples = [
       name: "Jose Maria Penardi",
       img: "https://randomuser.me/api/portraits/men/4.jpg",
       review: "This place is good but I feel that the meat is sometimes overcooked. it might be my own taste but I think it's good.",
+      stars: 3,
       date: "June 19th, 2016"
     },
     
   ]
+

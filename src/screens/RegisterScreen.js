@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
-import { Header, } from "native-base";
-import Icon from "react-native-vector-icons/Ionicons";
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 
 class RegisterScreen extends Component {
     constructor(props) {
@@ -33,26 +31,14 @@ class RegisterScreen extends Component {
             confirmPassword: input
         })
     }
+
+    static navigationOptions = {
+        title: "REGISTER NOW",
+    }
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <Header style={{ backgroundColor: "#fff" }}>
-                    <View style={{ flex: 1, flexDirection: 'row' }}>
-                        <View style={{ width: '10%', backgroundColor: 'fff', justifyContent: 'center', alignItems: 'center' }}>
-                            <View style={{ justifyContent: 'flex-start', alignContent: 'center' }}>
-                                <Icon name="md-arrow-back" size={25} color="#000" onPress={() => this.props.navigation.goBack()} />
-                            </View>
-                        </View>
-                        <View style={{ width: '80%', backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center' }}>
-                            <View style={{ backgroundColor: "#fff" }}>
-                                <Text style={{ color: '#4f4f4f', fontWeight: 'bold' }}>REGISTER NOW</Text>
-                            </View>
-                        </View>
-                        <View style={{ width: '10%', backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center' }}>
-                        </View>
-                    </View>
-                </Header>
-                <KeyboardAvoidingView keyboardVerticalOffset={0} behavior="padding" enabled>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <View style={styles.container}>
                         <View style={styles.inputBox}>
                             <TextInput
@@ -99,7 +85,7 @@ class RegisterScreen extends Component {
                             </View>
                         </TouchableOpacity>
                     </View>
-                </KeyboardAvoidingView>
+                </ScrollView>
             </View>
         );
     }

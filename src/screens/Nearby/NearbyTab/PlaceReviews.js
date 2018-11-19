@@ -13,10 +13,21 @@ class PlaceReviews extends Component {
     static navigationOptions = {
         title: "Place Reviews"
     }
+    countingStars = (count) => {
+        const stars = []
+        let counter = 0
+        do {
+            counter < count ? stars.push(<Icon name="md-star" size={20} color="#ffd600" key={counter}/>) : stars.push(<Icon name="md-star" size={20} color="#bebebe" key={counter}/>)
+            counter+=1
+        } while (counter < 5)
+        return stars
+    }
+
+
     render() {
         return (
             <View style={styles.container}>
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <View style={styles.hr}></View>
                     <View style={styles.reviewCount}>
                         <View style={styles.reviewText}>
@@ -27,7 +38,8 @@ class PlaceReviews extends Component {
                             <Icon name="md-star" size={20} color="#ffd600" />
                             <Icon name="md-star" size={20} color="#ffd600" />
                             <Icon name="md-star" size={20} color="#ffd600" />
-                            <Icon name="md-star" size={20} color="#eee" />
+                            <Icon name="md-star" size={20} color="#bebebe" />
+
                         </View>
                     </View>
                     <View style={styles.hr}></View>
@@ -48,11 +60,7 @@ class PlaceReviews extends Component {
                                     <Text style={{ fontSize: 12 }}>{item.date} </Text>
                                 </View>
                                 <View style={styles.customerStars}>
-                                    <Icon name="md-star" size={20} color="#ffd600" />
-                                    <Icon name="md-star" size={20} color="#ffd600" />
-                                    <Icon name="md-star" size={20} color="#ffd600" />
-                                    <Icon name="md-star" size={20} color="#ffd600" />
-                                    <Icon name="md-star" size={20} color="#ffd600" />
+                                    {this.countingStars(item.stars)}
                                 </View>
                             </View>
 

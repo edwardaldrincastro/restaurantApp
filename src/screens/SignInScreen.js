@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, KeyboardAvoidingView, ImageBackground } from 'react-native';
-import { Header, } from "native-base";
-import Icon from "react-native-vector-icons/Ionicons";
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView, ImageBackground, KeyboardAvoidingView } from 'react-native';
 
 class SignInScreen extends Component {
     constructor(props) {
@@ -26,27 +24,14 @@ class SignInScreen extends Component {
             password: input
         })
     }
+    static navigationOptions = {
+        title: "SIGN IN",
+    }
     render() {
         return (
-            <View style={{ flex: 1 }}>
-                <Header style={{ backgroundColor: "#fff" }}>
-                    <View style={{ flex: 1, flexDirection: 'row' }}>
-                        <View style={{ width: '10%', backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center' }}>
-                            <View style={{ justifyContent: 'flex-start', alignContent: 'center' }}>
-                                <Icon name="md-arrow-back" size={25} color="#000" onPress={() => this.props.navigation.goBack()} />
-                            </View>
-                        </View>
-                        <View style={{ width: '80%', backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center' }}>
-                            <View style={{ backgroundColor: "#fff" }}>
-                                <Text style={{ color: '#4f4f4f', fontWeight: 'bold' }}>SIGN IN</Text>
-                            </View>
-                        </View>
-                        <View style={{ width: '10%', backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center' }}>
-                        </View>
-                    </View>
-                </Header>
-                <KeyboardAvoidingView keyboardVerticalOffset={0} behavior="padding" enabled>
-                    <View style={styles.container}>
+            <View style={{ flex: 1, backgroundColor: "#fff" }}>
+                <View style={styles.container}>
+                    <ScrollView showsVerticalScrollIndicator={false}>
                         <View style={styles.inputBox}>
                             <TextInput
                                 placeholder="EMAIL ADDRESS"
@@ -84,26 +69,27 @@ class SignInScreen extends Component {
                                 <Text style={styles.buttonText}>CONNECT WITH TWITTER</Text>
                             </View>
                         </TouchableOpacity>
-                    </View>
-                    <View style={{ height: '40%', width: '100%', }}>
-                        <ImageBackground source={require('../assets/fruitBowl2.jpg')} style={{
-                            width: '100%',
-                            height: '100%'
-                        }}>
-                            <View style={{ height: 2, width: "100%", opacity: 1, backgroundColor: '#fff' }} />
-                            <View style={{ height: 2, width: "100%", opacity: 0.9, backgroundColor: '#fff' }} />
-                            <View style={{ height: 2, width: "100%", opacity: 0.8, backgroundColor: '#fff' }} />
-                            <View style={{ height: 2, width: "100%", opacity: 0.7, backgroundColor: '#fff' }} />
-                            <View style={{ height: 2, width: "100%", opacity: 0.6, backgroundColor: '#fff' }} />
-                            <View style={{ height: 2, width: "100%", opacity: 0.5, backgroundColor: '#fff' }} />
-                            <View style={{ height: 2, width: "100%", opacity: 0.4, backgroundColor: '#fff' }} />
-                            <View style={{ height: 2, width: "100%", opacity: 0.3, backgroundColor: '#fff' }} />
-                            <View style={{ height: 2, width: "100%", opacity: 0.2, backgroundColor: '#fff' }} />
-                            <View style={{ height: 2, width: "100%", opacity: 0.1, backgroundColor: '#fff' }} />
-                        </ImageBackground>
-                    </View>
 
-                </KeyboardAvoidingView>
+                    </ScrollView>
+                </View>
+
+                <View style={{ height: '40%', width: '100%' }}>
+                    <ImageBackground source={require('../assets/fruitBowl2.jpg')} style={{
+                        width: '100%',
+                        height: '100%'
+                    }}>
+                        <View style={{ height: 2, width: "100%", opacity: 1, backgroundColor: '#fff' }} />
+                        <View style={{ height: 2, width: "100%", opacity: 0.9, backgroundColor: '#fff' }} />
+                        <View style={{ height: 2, width: "100%", opacity: 0.8, backgroundColor: '#fff' }} />
+                        <View style={{ height: 2, width: "100%", opacity: 0.7, backgroundColor: '#fff' }} />
+                        <View style={{ height: 2, width: "100%", opacity: 0.6, backgroundColor: '#fff' }} />
+                        <View style={{ height: 2, width: "100%", opacity: 0.5, backgroundColor: '#fff' }} />
+                        <View style={{ height: 2, width: "100%", opacity: 0.4, backgroundColor: '#fff' }} />
+                        <View style={{ height: 2, width: "100%", opacity: 0.3, backgroundColor: '#fff' }} />
+                        <View style={{ height: 2, width: "100%", opacity: 0.2, backgroundColor: '#fff' }} />
+                        <View style={{ height: 2, width: "100%", opacity: 0.1, backgroundColor: '#fff' }} />
+                    </ImageBackground>
+                </View>
             </View>
         );
     }
@@ -169,10 +155,12 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 12
     },
-    orText: { 
-        color: '#323232', 
+    orText: {
+        color: '#323232',
         fontWeight: 'bold',
-         fontSize: 12, 
-         margin: 5 }
+        fontSize: 12,
+        margin: 5,
+        textAlign: 'center',
+    }
 
 });

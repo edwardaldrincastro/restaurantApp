@@ -7,7 +7,9 @@ class LandingScreen extends Component {
         this.state = {
         };
     }
-
+    static navigationOptions = {
+        header: null
+    }
     render() {
         return (
             <View style={{ flex: 1 }}>
@@ -26,6 +28,10 @@ class LandingScreen extends Component {
                                     width: '100%',
                                     height: '100%'
                                 }} />
+                            {/* <ImageBackground source={{uri: "http://foodsy.com.br/wp-content/uploads/2015/10/logo.png"}} style={{
+                                    width: '100%',
+                                    height: '100%'
+                                }} /> */}
                             </View>
                         </View>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}>
@@ -51,8 +57,6 @@ export default LandingScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // justifyContent: 'center',
-        // alignItems: 'center',
         backgroundColor: '#eee',
     },
     loginButton: {
@@ -81,6 +85,6 @@ const styles = StyleSheet.create({
         height: 90,
         width: 200,
         margin: 5,
-        // backgroundColor: 'red'
+        marginLeft: 20
     }
 });

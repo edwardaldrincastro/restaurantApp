@@ -5,6 +5,7 @@ import RegisterScreen from "./src/screens/RegisterScreen";
 import SignInScreen from "./src/screens/SignInScreen";
 import ForgotPasswordModal from "./src/components/forgotPasswordModal";
 import RestaurantStack from "./src/navigators/restaurantStack";
+import Icon from "react-native-vector-icons/Ionicons";
 
 export default class App extends Component {
   render() {
@@ -18,13 +19,28 @@ const AuthStackNavigator = createStackNavigator({
   SignIn: SignInScreen,
   Register: RegisterScreen,
   ForgotModal: ForgotPasswordModal,
-}, {
-    navigationOptions: {
-    header: null
-    }
-  },
+},
   {
-    initialRouteName: 'Landing'
+    initialRouteName: 'Landing',
+    navigationOptions: ({ navigation }) => {
+      return {
+        title: 'Sign In',
+        headerStyle: {
+          backgroundColor: "#fff",
+          elevation: 0
+
+        },
+        headerTintColor: "#323232",
+        headerLeft: <Icon name="md-arrow-back" size={25} color="#000" onPress={() => navigation.goBack()} style={{ marginLeft: 15 }} />,
+        headerTitleStyle: {
+          width: '80%',
+          marginHorizontal: 0,
+          textAlign: 'center',
+          fontSize: 16,
+        },
+      }
+    }
+
   })
 const SwitchNav = createSwitchNavigator({
   App: AuthStackNavigator,

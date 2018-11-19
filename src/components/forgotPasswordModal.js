@@ -15,6 +15,9 @@ class ForgotPasswordModal extends Component {
             emailAddress: input
         })
     }
+    static navigationOptions={
+        header: null
+    }
     render() {
         return (
             <View style={styles.modalContainer}>
