@@ -74,7 +74,9 @@ class SignInScreen extends Component {
                 </View>
 
                 <View style={{ height: '40%', width: '100%' }}>
-                    <ImageBackground source={require('../assets/fruitBowl2.jpg')} style={{
+                    {/* <ImageBackground source={require('../assets/fruitBowl2.jpg')} style={{ */}
+                        
+                    <ImageBackground source={{uri: "https://images4.alphacoders.com/804/thumb-1920-804204.jpg"}} style={{
                         width: '100%',
                         height: '100%'
                     }}>
@@ -102,9 +104,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#fff',
-    },
-    keyboardContainer: {
-        flex: 1,
     },
     inputBox: {
         width: 250,

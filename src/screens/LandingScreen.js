@@ -14,24 +14,28 @@ class LandingScreen extends Component {
         return (
             <View style={{ flex: 1 }}>
                 <View style={styles.container}>
-                    <View style={{ height: '60%', width: '100%', }}>
-                        <ImageBackground source={require('../assets/jar.jpg')} style={{
+                    <View style={{ height: '55%', width: '100%', }}>
+                        <ImageBackground source={{uri: "https://images4.alphacoders.com/714/714817.jpg"}} style={{
                             width: '100%',
                             height: '100%'
                         }} />
                     </View>
 
-                    <View style={{ height: '40%', width: '100%', backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center' }}>
-                        <View style={{ justifyContent: 'center', alignItems: 'center', marginBottom: 5 }}>
+                    <View style={{ height: '45%', width: '100%', backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center' }}>
+                        <View style={{ justifyContent: 'center', alignItems: 'center', marginBottom: 10 }}>
                             <View style={styles.logo}>
-                                <ImageBackground source={require('../assets/company_logo.png')} style={{
+                                {/* <ImageBackground source={require('../assets/company_logo.png')} style={{
                                     width: '100%',
                                     height: '100%'
-                                }} />
+                                }} /> */}
                             {/* <ImageBackground source={{uri: "http://foodsy.com.br/wp-content/uploads/2015/10/logo.png"}} style={{
                                     width: '100%',
                                     height: '100%'
                                 }} /> */}
+                                 <ImageBackground source={{uri: "https://fanart.tv/fanart/tv/289909/hdtvlogo/food-wars-shokugeki-no-soma-552502739c742.png"}} style={{
+                                    width: '100%',
+                                    height: '100%'
+                                }} />
                             </View>
                         </View>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}>
@@ -62,7 +66,7 @@ const styles = StyleSheet.create({
     loginButton: {
         height: 40,
         width: 200,
-        backgroundColor: '#323232',
+        backgroundColor: '#00bcd4',
         margin: 5,
         justifyContent: 'center',
         alignItems: 'center',
@@ -71,7 +75,7 @@ const styles = StyleSheet.create({
     signUpButton: {
         height: 40,
         width: 200,
-        backgroundColor: '#00BD57',
+        backgroundColor: '#00bcd4',
         margin: 5,
         justifyContent: 'center',
         alignItems: 'center',
@@ -82,7 +86,7 @@ const styles = StyleSheet.create({
         color: "#fff"
     },
     logo: {
-        height: 90,
+        height: 120,
         width: 200,
         margin: 5,
         marginLeft: 20
